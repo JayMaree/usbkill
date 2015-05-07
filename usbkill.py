@@ -60,6 +60,9 @@ def kill_computer():
 	
 	# Poweroff computer immediately
 	if CURRENT_PLATFORM.startswith("DARWIN"):
+		# Create a capture from the iSight camera for evidence ( will be saved in current folder )
+		# Download imagesnap from http://iharder.sourceforge.net/current/macosx/imagesnap/
+		os.system("./imagesnap")
 		# OS X (Darwin) - Will halt ungracefully, without signaling apps
 		os.system("killall loginwindow Finder && halt -q")
 	elif CURRENT_PLATFORM.endswith("BSD"):
